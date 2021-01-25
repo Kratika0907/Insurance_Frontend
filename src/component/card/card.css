@@ -1,0 +1,27 @@
+.polcard-container {
+    border: 2px solid #807809;
+    display: flex;
+    justify-content:space-between;
+    width:25em;
+    height:12em ;
+
+}
+.polcard-container:hover {
+    box-shadow:3px 3px 5px 6px #ccc;
+    cursor: pointer;
+}
+.style-block{
+    background-color:#1A3599;
+    width:3em;
+    writing-mode: vertical-lr;
+    letter-spacing:5px;
+    color:white;
+    font-size:24px;
+
+}
+.style-block p {
+    transform: translateY(25px)
+}
+.polcard-details {
+    font-weight:bold;
+}
