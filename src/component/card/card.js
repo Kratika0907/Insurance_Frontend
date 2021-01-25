@@ -1,19 +1,38 @@
 import React from "react";
+import { useHistory  } from 'react-router-dom';
 import "./card.css";
 
-export const PolicyCard = (props) => {
+const PolicyCard = ({ policyDetail }) => {
+  const {policyId, customerId, date, premium } = policyDetail;
+  const history = useHistory();
+  const policyDetailClick = (policyDetail) => {
+    history.state = policyDetail
+    history.push(`/${policyId}`)
+  }
   return (
     <div
       className="polcard-container"
-      onClick={() => console.log("I am clicked")}
+      onClick={() => policyDetailClick(policyDetail)}
     >
-      <div className="style-block"><p>Vehicle</p></div>
+      <div className="style-block">
+        <p>Vehicle</p>
+      </div>
       <div className="polcard-details">
-        <p> Policy Number</p>
-        <p> Customer Id</p>
-        <p> Date of Purchase</p>
-        <p>Premium Amount</p>
+        <p> Policy Number : {policyId}</p>
+        <p> Customer Id : {customerId}</p>
+        <p> Date of Purchase : {date}</p>
+        <p>Premium Amount {premium} </p>
       </div>
     </div>
   );
 };
+
+const PoliciesDisplay = (props) => {
+  const { policyData } = props;
+  const displayResult = policyData.map((policy, index) => {
+    return <PolicyCard policyDetail={policy} />;
+  });
+  return <div className="policies-container"> {displayResult} </div>;
+};
+
+export default PoliciesDisplay;

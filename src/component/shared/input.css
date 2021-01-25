@@ -1,0 +1,12 @@
+
+.custom-input-container input {
+    padding : 6px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    width: 7em;
+}
+.custom-input-container label {
+    font-weight:bold;
+    width:300px;
+    display: inline-block;
+}

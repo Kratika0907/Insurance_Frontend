@@ -14,6 +14,8 @@
 }
 .policy-edit {
     display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 input[type="submit"] {
     border-radius: 2px;
