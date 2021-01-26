@@ -4,6 +4,9 @@
     justify-content: space-around;
     border: 5px solid #1A3599;
     height: 100%;
+    width: 80%;
+    margin-left: 2em;
+    margin-top: 1em;
 
 }
 .policy-const {
@@ -19,9 +22,11 @@
 }
 input[type="submit"] {
     border-radius: 2px;
-    background-color: #1A3599;
+    background-color: #807809;
     color: white;
-    font-size:16    px;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:0.5px;
     padding:8px;
     cursor: pointer;
 }
