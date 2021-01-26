@@ -2,7 +2,7 @@
     border: 2px solid #807809;
     display: flex;
     justify-content:space-between;
-    width:25em;
+    width:30em;
     height:12em ;
     margin-bottom: 0.5em;
 
@@ -18,7 +18,6 @@
     letter-spacing:5px;
     color:white;
     font-size:24px;
-
 }
 .style-block p {
     transform: translateY(25px)
@@ -32,3 +31,16 @@
     flex-direction: column;
     align-items:center;
 }
+
+@media only screen and (max-width: 600px) {
+    .polcard-container {
+        width:20em;
+    }
+    .style-block{
+        font-size:16px;
+    }
+    .polcard-details{
+        transform: translateX(-10px);
+        font-size: 14px;
+    }
+  }

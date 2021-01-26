@@ -2,7 +2,7 @@ import "./loader.css";
 
 export const Loader = () => {
   return (
-    <div className="loader-container">
+    <div data-testid="loader" className="loader-container">
       <div className="container">
         <div className="banner">
           LOADING

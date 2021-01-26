@@ -1,14 +1,14 @@
 import React from "react";
-import { useHistory  } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import "./card.css";
 
 const PolicyCard = ({ policyDetail }) => {
-  const {policyId, customerId, date, premium } = policyDetail;
+  const { policyId, customerId, date, premium } = policyDetail;
   const history = useHistory();
   const policyDetailClick = (policyDetail) => {
-    history.state = policyDetail
-    history.push(`/${policyId}`)
-  }
+    history.state = policyDetail;
+    history.push(`/${policyId}`);
+  };
   return (
     <div
       className="polcard-container"
@@ -29,10 +29,10 @@ const PolicyCard = ({ policyDetail }) => {
 
 const PoliciesDisplay = (props) => {
   const { policyData } = props;
-  const displayResult = policyData.map((policy, index) => {
-    return <PolicyCard policyDetail={policy} />;
+  const displayResult = policyData.map((policy) => {
+    return <PolicyCard policyDetail={policy} key={policy.id} />;
   });
-  return <div className="policies-container"> {displayResult} </div>;
+  return <div data-testid="policy-card-container" className="policies-container"> {displayResult} </div>;
 };
 
 export default PoliciesDisplay;

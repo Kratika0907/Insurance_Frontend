@@ -16,7 +16,6 @@ const editArray = [
   "comprehensive",
   "gender",
   "region",
-  "martialStatus",
   "income",
 ];
 const PolicyDetailCard = () => {

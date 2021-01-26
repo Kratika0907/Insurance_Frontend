@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Line } from "react-chartjs-2";
 import BackendService from "../../util/backend_service";
 import { PolicyStateContext } from "../../App";
+import './chart.css'
 
 async function generateChartData(region = "North", dispatch) {
   dispatch({ type: "SHOW_LOADER", payload: true });
@@ -45,14 +46,19 @@ const PolicyChart = () => {
       let data = await generateChartData(region, context.dispatch);
       setChartData(data);
     })();
-  }, [region, setChartData]);
+  }, [region, setChartData, context.dispatch]);
   const handleRegionChange = (e) => {
     setRegion(e.target.value);
   };
   return (
     <>
-      <div className="header">
-        <Line data={chartData} />
+      <div data-testid="chart-element">
+        <Line
+          data={chartData}
+          width={70}
+          height={500}
+          options={{ maintainAspectRatio: false }}
+        />
         <label for="policy-search">Choose Region:</label>
         <select
           name="search-x"
